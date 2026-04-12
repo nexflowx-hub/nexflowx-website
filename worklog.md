@@ -435,3 +435,36 @@ Stage Summary:
 - Mobile-responsive sidebar with overlay behavior
 - All portal pages wired to useAppStore for navigation
 - Zero new lint errors introduced (2 pre-existing in other files)
+
+---
+Task ID: 11
+Agent: Main Agent + Subagents
+Task: Email domain update, mobile optimization, SEO metadata, GitHub push
+
+Work Log:
+- Updated all 37 occurrences of nexflowx.com to nexflowx.tech across 9 source files (emails, URLs, API endpoints)
+- Verified zero nexflowx.com references remain in src/
+- Mobile optimization (subagent 4-a):
+  - globals.css: Added iOS safe-area insets, touch-action: manipulation, hover-only card effects (@media hover:hover), 14px minimum font on mobile, code block mobile scaling
+  - solutions.tsx: Horizontal scrollable comparison table on mobile (overflow-x-auto, min-w-[520px])
+  - navbar.tsx: 44px minimum touch target on hamburger button with aria-label
+  - footer.tsx: nx-safe-bottom class for iOS, 44px touch targets on all links
+  - portal-layout.tsx: 44px hamburger button, safe area bottom padding
+  - home.tsx: Improved flow diagram spacing, 44px button touch targets
+  - how-it-works.tsx: Reduced mobile arrow connector height (48→32px), tighter spacing
+- SEO metadata (subagent 4-b):
+  - layout.tsx: Added metadataBase, canonical URL, robots directives, expanded keywords (14 terms), comprehensive OpenGraph/Twitter cards, manifest link, mobile web app meta tags, viewport export
+  - page.tsx: Added JSON-LD structured data (Organization schema + SoftwareApplication schema)
+  - Created public/robots.txt: Allow all, disallow /api/, sitemap reference
+  - Created public/sitemap.xml: 7 entries with priorities 0.3-1.0
+  - Created public/manifest.json: PWA manifest with NexFlowX branding
+- Fixed themeColor warning: Moved from metadata to viewport export (Next.js 16 requirement)
+- Updated git remote from NeXFlowX-Financial to nexflowx-website
+- Force pushed to https://github.com/nexflowx-hub/nexflowx-website.git
+
+Stage Summary:
+- All emails and domains: nexflowx.com → nexflowx.tech (37 occurrences)
+- Mobile: iOS safe areas, 44px touch targets, hover-only effects, responsive tables
+- SEO: Full metadata, JSON-LD, robots.txt, sitemap.xml, manifest.json
+- GitHub: Pushed to nexflowx-hub/nexflowx-website (main branch)
+- Zero lint errors, clean compilation, no warnings
