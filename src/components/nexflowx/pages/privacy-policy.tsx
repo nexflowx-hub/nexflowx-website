@@ -108,8 +108,7 @@ export function PrivacyPolicyPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            NexFlowX is a product of IAHUB360 LTD (Company No. 16626733), registered at
-            124-128 City Road, London, EC1V 2NX, England.
+            NeXFlowX™ is a financial technology brand owned and operated by IAHUB360 LTD (Company No. 16626733), registered at 124-128 City Road, London, EC1V 2NX, United Kingdom. Regional data processing may involve: NeXTech France (SIRET 79015500600014), NeXTech Portugal (NIF 219458090), NeX-Systems Portugal (NIF 312668201), and NexTrustX Brasil (CNPJ 65.764.339/0001-00).
           </motion.p>
         </header>
 
@@ -146,7 +145,7 @@ export function PrivacyPolicyPage() {
                 className="text-sm sm:text-base leading-relaxed"
                 style={{ color: 'var(--muted-foreground)' }}
               >
-                NexFlowX Technologies Ltd ("NexFlowX", "we", "us", or "our") is committed
+                IAHUB360 LTD, on behalf of the NeXFlowX™ brand ("NexFlowX", "we", "us", or "our") is committed
                 to protecting the privacy and personal data of all individuals and entities
                 that interact with our platform and services. This Privacy Policy ("Policy")
                 describes how we collect, use, store, share, and protect personal data when
@@ -246,6 +245,12 @@ export function PrivacyPolicyPage() {
                     instructions of its Data Controllers. We do not process personal data
                     for our own purposes beyond what is necessary to provide our technology
                     services.
+                  </p>
+                  <p className="text-sm leading-relaxed mt-3" style={{ color: 'var(--muted-foreground)' }}>
+                    As part of the NexFlowX operational framework, regional entities including NeXTech France,
+                    NeXTech Portugal, NeX-Systems Portugal, and NexTrustX Brasil may process data under the
+                    instructions of IAHUB360 LTD in accordance with Master Licensing Agreements. Each entity
+                    complies with applicable local data protection regulations in their respective jurisdictions.
                   </p>
                 </div>
               </div>
@@ -932,26 +937,26 @@ export function PrivacyPolicyPage() {
                   boxShadow: '0 4px 6px -1px rgba(0,0,0,0.07)',
                 }}
               >
-                <p
-                  className="text-sm sm:text-base leading-relaxed mb-4"
-                  style={{ color: 'var(--muted-foreground)' }}
-                >
-                  If you have any questions, concerns, or requests regarding this Privacy
-                  Policy or our data protection practices, including exercising your rights
-                  under GDPR, please contact our Data Protection Officer at:
+                <p className="text-sm sm:text-base leading-relaxed mb-4" style={{ color: 'var(--muted-foreground)' }}>
+                  If you have any questions, concerns, or requests regarding this Privacy Policy, or if you
+                  wish to exercise any of your data subject rights, please contact the relevant entity
+                  based on your jurisdiction:
                 </p>
-                <div className="flex items-center gap-3">
-                  <Mail
-                    className="w-4 h-4 shrink-0"
-                    style={{ color: '#2F6BFF' }}
-                    strokeWidth={1.8}
-                  />
-                  <span
-                    className="text-sm font-semibold"
-                    style={{ color: '#2F6BFF' }}
-                  >
-                    support@nexflowx.tech
-                  </span>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-lg" style={{ background: 'rgba(47, 107, 255, 0.08)', border: '1px solid rgba(47, 107, 255, 0.18)' }}>
+                    <Mail className="w-4 h-4 shrink-0" style={{ color: '#2F6BFF' }} strokeWidth={1.8} />
+                    <div>
+                      <span className="text-xs block mb-0.5" style={{ color: 'var(--muted-foreground)' }}>Data Protection Officer</span>
+                      <span className="text-sm font-semibold" style={{ color: '#2F6BFF' }}>compliance@nexflowx.tech</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 px-4 py-3 rounded-lg" style={{ background: 'var(--muted)', border: '1px solid var(--border)' }}>
+                    <Mail className="w-4 h-4 shrink-0" style={{ color: 'var(--muted-foreground)' }} strokeWidth={1.8} />
+                    <div>
+                      <span className="text-xs block mb-0.5" style={{ color: 'var(--muted-foreground)' }}>General Support</span>
+                      <span className="text-sm font-semibold" style={{ color: 'var(--foreground)' }}>support@nexflowx.tech</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

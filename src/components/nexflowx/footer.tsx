@@ -19,12 +19,18 @@ export function Footer() {
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-start gap-3">
             <Shield className="w-4 h-4 text-[#2F6BFF] mt-0.5 shrink-0" />
-            <p className="text-xs leading-relaxed text-[var(--muted-foreground)]">
-              <strong className="text-[var(--foreground)]">NexFlowX</strong> operates strictly as a{' '}
-              <strong>Technology Service Provider</strong> and does not engage in regulated financial activities.
-              The platform does not hold client funds, execute transactions, or provide payment services.
-              All financial operations are performed by licensed third-party institutions.
-            </p>
+            <div className="text-xs leading-relaxed text-[var(--muted-foreground)]">
+              <strong className="text-[var(--foreground)]">NeXFlowX™</strong> — A financial technology brand owned and operated by{' '}
+              <strong>IAHUB360 LTD</strong> (16626733). Regional nodes:{' '}
+              <strong>NeXTech France</strong> (SIRET 79015500600014),{' '}
+              <strong>NeXTech Portugal</strong> (NIF 219458090),{' '}
+              <strong>NeX-Systems</strong> (NIF 312668201),{' '}
+              <strong>NexTrustX Brasil</strong> (CNPJ 65.764.339/0001-00).{' '}
+              <span className="mt-1 block">
+                <strong className="text-[var(--foreground)]">NexFlowX</strong> operates strictly as a{' '}
+                <strong>Technology Service Provider</strong> and does not engage in regulated financial activities.
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -65,11 +71,14 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-[var(--muted-foreground)] leading-relaxed mb-4">
-              Financial infrastructure for cross-border commerce.
-              API-driven technology connecting global businesses to local payment systems.
+              Financial logistics API for cross-border commerce.
+              100% Non-Custodial Technology Service Provider (TSP).
+              API-driven infrastructure connecting global businesses to local payment systems.
             </p>
             <p className="text-xs text-[var(--muted-foreground)] opacity-70">
-              A product by <span className="text-[var(--foreground)] font-medium">IAHUB360 LTD</span>
+              <span className="text-[var(--foreground)] font-medium">IAHUB360 LTD</span>
+              <span className="mx-1">·</span>
+              <span>London, UK</span>
             </p>
           </div>
 

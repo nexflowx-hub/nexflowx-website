@@ -468,3 +468,24 @@ Stage Summary:
 - SEO: Full metadata, JSON-LD, robots.txt, sitemap.xml, manifest.json
 - GitHub: Pushed to nexflowx-hub/nexflowx-website (main branch)
 - Zero lint errors, clean compilation, no warnings
+
+---
+Task ID: 6
+Agent: Main Agent
+Task: Update NexFlowX footer with full corporate entity framework
+
+Work Log:
+- Read existing footer.tsx to understand current structure (compliance banner, trust badges, brand/platform/compliance/legal columns, bottom bar)
+- Replaced compliance banner (old: simple TSP statement paragraph) with comprehensive two-part corporate entity banner including: NeXFlowX™ trademark, IAHUB360 LTD (16626733) ownership, 4 regional nodes with registration numbers (NeXTech France/SIRET, NeXTech Portugal/NIF, NeX-Systems/NIF, NexTrustX Brasil/CNPJ), and TSP disclaimer on separate line
+- Changed `<p>` to `<div>` wrapper in compliance banner to support the nested `<span className="mt-1 block">` for the two-part layout
+- Updated Brand column description from "Financial infrastructure for cross-border commerce. API-driven technology..." to "Financial logistics API for cross-border commerce. 100% Non-Custodial Technology Service Provider (TSP). API-driven infrastructure..."
+- Updated "A product by IAHUB360 LTD" to "IAHUB360 LTD · London, UK" with styled spans and middle dot separator
+- All existing content preserved: trust badges strip, Platform/Compliance & Legal/Legal link columns, bottom bar with copyright and registration details
+- Zero lint errors, clean compilation
+
+Stage Summary:
+- File edited: /home/z/my-project/src/components/nexflowx/footer.tsx
+- Compliance banner now references full corporate entity framework with 5 entities and registration numbers
+- Brand column updated with TSP positioning and London, UK location
+- All other footer sections (trust badges, navigation links, bottom bar) unchanged
+- Zero lint errors

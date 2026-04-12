@@ -35,12 +35,14 @@ export function ComplianceStatementPage() {
 
   const headerRef = useRef<HTMLDivElement>(null);
   const statementRef = useRef<HTMLDivElement>(null);
+  const corporateRef = useRef<HTMLDivElement>(null);
   const positionRef = useRef<HTMLDivElement>(null);
   const partnersRef = useRef<HTMLDivElement>(null);
   const frameworkRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
   const statementInView = useInView(statementRef, { once: true, margin: '-60px' });
+  const corporateInView = useInView(corporateRef, { once: true, margin: '-60px' });
   const positionInView = useInView(positionRef, { once: true, margin: '-60px' });
   const partnersInView = useInView(partnersRef, { once: true, margin: '-60px' });
   const frameworkInView = useInView(frameworkRef, { once: true, margin: '-60px' });
@@ -93,9 +95,9 @@ export function ComplianceStatementPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            A clear and transparent declaration of NexFlowX&apos;s regulatory position,
-            operational scope, and the role of our licensed partners in all financial
-            activities.
+            A clear and transparent declaration of NeXFlowX&rsquo;s regulatory position,
+            operational scope, corporate structure, and the role of licensed partners in all
+            financial activities. NeXFlowX™ is owned and operated by IAHUB360 LTD.
           </motion.p>
         </header>
 
@@ -215,6 +217,131 @@ export function ComplianceStatementPage() {
                 </p>
               </div>
             ))}
+          </motion.div>
+        </section>
+
+        {/* ─── Divider ─── */}
+        <div className="nx-divider mb-12" />
+
+        {/* ─── Corporate Entity Framework ─── */}
+        <section ref={corporateRef} className="mb-16" aria-labelledby="corporate-heading">
+          <motion.h2
+            id="corporate-heading"
+            className="text-2xl sm:text-3xl font-bold mb-4"
+            style={{ color: 'var(--foreground)' }}
+            variants={fadeUp}
+            initial="hidden"
+            animate={corporateInView ? 'visible' : 'hidden'}
+            custom={0}
+          >
+            Corporate Entity Framework
+          </motion.h2>
+
+          <motion.p
+            className="text-base leading-relaxed mb-8 max-w-2xl"
+            style={{ color: 'var(--muted-foreground)' }}
+            variants={fadeUp}
+            initial="hidden"
+            animate={corporateInView ? 'visible' : 'hidden'}
+            custom={1}
+          >
+            NeXFlowX&trade; is a financial technology brand owned and operated by IAHUB360 LTD.
+            Global operations are executed through interconnected entities operating under
+            Master Licensing Agreements, ensuring technology remains global while compliance
+            remains local.
+          </motion.p>
+
+          <div className="grid gap-4 sm:grid-cols-2 mb-8">
+            {/* IP Holding Core */}
+            <motion.div
+              className="rounded-xl p-6 border relative overflow-hidden"
+              style={{ background: 'var(--card)', borderColor: 'rgba(47, 107, 255, 0.18)', boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
+              variants={fadeUp}
+              initial="hidden"
+              animate={corporateInView ? 'visible' : 'hidden'}
+              custom={2}
+            >
+              <div className="absolute top-0 left-0 right-0 h-1" style={{ background: 'linear-gradient(90deg, #0A1F44, #2F6BFF)' }} />
+              <span className="nx-badge nx-badge-info text-xs mb-3 inline-flex">Global IP Holder</span>
+              <h3 className="text-base font-bold mb-1" style={{ color: 'var(--foreground)' }}>IAHUB360 LTD</h3>
+              <p className="text-xs mb-2" style={{ color: '#2F6BFF' }}>Company No. 16626733</p>
+              <p className="text-xs" style={{ color: 'var(--muted-foreground)' }}>124-128 City Road, London, EC1V 2NX, UK</p>
+              <p className="text-xs mt-3 leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>
+                Master IP Holder, Global Steering Committee base, and ultimate beneficiary of licensing royalties.
+              </p>
+            </motion.div>
+
+            {/* LATAM Node */}
+            <motion.div
+              className="rounded-xl p-6 border"
+              style={{ background: 'var(--card)', borderColor: 'var(--border)', boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
+              variants={fadeUp}
+              initial="hidden"
+              animate={corporateInView ? 'visible' : 'hidden'}
+              custom={3}
+            >
+              <span className="nx-badge nx-badge-info text-xs mb-3 inline-flex">LATAM Node</span>
+              <h3 className="text-base font-bold mb-1" style={{ color: 'var(--foreground)' }}>NexTrustX Brasil</h3>
+              <p className="text-xs mb-2" style={{ color: '#2F6BFF' }}>CNPJ 65.764.339/0001-00</p>
+              <p className="text-xs mt-3 leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>
+                Latin American bridge, facilitating technical translation between PIX protocols and the NexFlowX ISO standards.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* EU Nodes */}
+          <motion.div
+            className="rounded-xl p-6 border mb-8"
+            style={{ background: 'var(--card)', borderColor: 'var(--border)', boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
+            variants={fadeUp}
+            initial="hidden"
+            animate={corporateInView ? 'visible' : 'hidden'}
+            custom={4}
+          >
+            <span className="nx-badge nx-badge-info text-xs mb-4 inline-flex">European Operations (EU Nodes)</span>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div>
+                <p className="text-sm font-semibold" style={{ color: 'var(--foreground)' }}>NeXTech France</p>
+                <p className="text-xs" style={{ color: '#2F6BFF' }}>SIRET 79015500600014</p>
+                <p className="text-xs mt-1 leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>
+                  Francophone market expansion and EU compliance representation.
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold" style={{ color: 'var(--foreground)' }}>NeXTech Portugal</p>
+                <p className="text-xs" style={{ color: '#2F6BFF' }}>NIF 219458090</p>
+                <p className="text-xs mt-1 leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>
+                  Iberian technical onboarding, merchant support, and API Sandbox testing.
+                </p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold" style={{ color: 'var(--foreground)' }}>NeX-Systems Portugal</p>
+                <p className="text-xs" style={{ color: '#2F6BFF' }}>NIF 312668201</p>
+                <p className="text-xs mt-1 leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>
+                  Technical infrastructure and systems operations.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Manifesto */}
+          <motion.div
+            className="rounded-xl p-6 sm:p-8 border-l-[3px]"
+            style={{ borderColor: 'var(--border)', borderLeftColor: '#2F6BFF', background: 'var(--muted)' }}
+            variants={fadeUp}
+            initial="hidden"
+            animate={corporateInView ? 'visible' : 'hidden'}
+            custom={5}
+          >
+            <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: 'var(--muted-foreground)' }}>
+              NexFlowX Global Vision — Operational Manifesto
+            </p>
+            <blockquote className="text-sm sm:text-base leading-relaxed italic" style={{ color: 'var(--foreground)' }}>
+              &ldquo;IAHUB360 LTD aims to build and maintain the world&rsquo;s most robust and agnostic
+              Financial Logistics API (NexFlowX). The organization is committed to a 100% Non-Custodial
+              Technology Service Provider (TSP) model. We orchestrate data and routing logic; we do not
+              intermediate or hold third-party capital. Our ultimate asset is our Intellectual Property.&rdquo;
+            </blockquote>
           </motion.div>
         </section>
 

@@ -109,8 +109,11 @@ export function TermsOfServicePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
-            NexFlowX is a product of IAHUB360 LTD (Company No. 16626733), registered at
-            124-128 City Road, London, EC1V 2NX, England.
+            NeXFlowX™ is a financial technology brand owned and operated by IAHUB360 LTD
+            (Company No. 16626733), registered at 124-128 City Road, London, EC1V 2NX,
+            United Kingdom. Global operations are executed through regional nodes: NeXTech
+            France (SIRET 79015500600014), NeXTech Portugal (NIF 219458090), NeX-Systems
+            Portugal (NIF 312668201), and NexTrustX Brasil (CNPJ 65.764.339/0001-00).
           </motion.p>
           <motion.p
             className="text-base leading-relaxed max-w-2xl"
@@ -159,8 +162,8 @@ export function TermsOfServicePage() {
                 style={{ color: 'var(--muted-foreground)' }}
               >
                 These Terms of Service ("Terms") constitute a legally binding agreement
-                between you ("Client", "Operator", "you", or "your") and NexFlowX
-                Technologies Ltd ("NexFlowX", "we", "us", or "our"), governing your
+                between you ("Client", "Operator", "you", or "your") and IAHUB360
+                LTD, on behalf of the NeXFlowX™ brand ("NexFlowX", "we", "us", or "our"), governing your
                 access to and use of the NexFlowX platform, API services, documentation,
                 software, and any related services (collectively, the "Services").
               </p>
@@ -181,6 +184,17 @@ export function TermsOfServicePage() {
                 enterprise operators, technology partners, and any authorised
                 representatives acting on behalf of an entity. You represent and warrant
                 that you have the authority to bind such entity to these Terms.
+              </p>
+              <p
+                className="text-sm sm:text-base leading-relaxed"
+                style={{ color: 'var(--muted-foreground)' }}
+              >
+                Where references are made to "NexFlowX" in these Terms, this refers to the
+                NeXFlowX™ technology platform operated by IAHUB360 LTD and its
+                interconnected operational entities under Master Licensing Agreements,
+                including NeXTech France, NeXTech Portugal, NeX-Systems Portugal, and
+                NexTrustX Brasil. All entities operate under the governance of the Global
+                Steering Committee of IAHUB360 LTD.
               </p>
             </div>
           </motion.section>
@@ -558,6 +572,17 @@ export function TermsOfServicePage() {
                 className="text-sm sm:text-base leading-relaxed"
                 style={{ color: 'var(--muted-foreground)' }}
               >
+                The NeXFlowX™ brand, platform, and all related intellectual property are
+                owned by IAHUB360 LTD as the Master IP Holder. Regional operational entities
+                (NeXTech France, NeXTech Portugal, NeX-Systems Portugal, and NexTrustX
+                Brasil) operate under Master Licensing Agreements and do not hold independent
+                ownership of the core intellectual property. IAHUB360 LTD&apos;s ultimate asset
+                is its Intellectual Property.
+              </p>
+              <p
+                className="text-sm sm:text-base leading-relaxed"
+                style={{ color: 'var(--muted-foreground)' }}
+              >
                 You are granted a limited, non-exclusive, non-transferable, revocable
                 licence to access and use the Services solely for their intended purpose in
                 accordance with these Terms. You may not copy, modify, distribute, sell, or
@@ -741,6 +766,16 @@ export function TermsOfServicePage() {
                 relief in any court of competent jurisdiction to protect its intellectual
                 property or confidential information without the requirement to post a bond
                 or other security.
+              </p>
+              <p
+                className="text-sm sm:text-base leading-relaxed"
+                style={{ color: 'var(--muted-foreground)' }}
+              >
+                For matters relating to operations conducted by regional nodes, the applicable
+                law may include the laws of France (for NeXTech France operations), Portugal
+                (for NeXTech Portugal and NeX-Systems Portugal operations), and Brazil (for
+                NexTrustX Brasil operations), in addition to the governing law of England and
+                Wales applicable to IAHUB360 LTD.
               </p>
             </div>
           </motion.section>
