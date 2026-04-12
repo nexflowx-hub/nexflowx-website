@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ExternalLink, Eye, EyeOff, Monitor, Copy, Check } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 
-const DEMO_URL = 'https://demo-dashboard.nexflowx.com';
+const DEMO_URL = 'https://demo-dashboard.nexflowx.tech';
 const DEMO_USER = 'NeXFlowX';
 const DEMO_PASS = 'Nex123456789*';
 

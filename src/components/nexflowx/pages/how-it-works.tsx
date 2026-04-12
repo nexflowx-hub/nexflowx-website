@@ -115,13 +115,13 @@ function ArrowConnector({ orientation }: { orientation: 'horizontal' | 'vertical
       className="relative flex items-center justify-center shrink-0"
       style={{
         width: isH ? 48 : '100%',
-        height: isH ? '100%' : 48,
+        height: isH ? '100%' : 32,
       }}
     >
       <svg
         width={isH ? 48 : 24}
-        height={isH ? 24 : 48}
-        viewBox={isH ? '0 0 48 24' : '0 0 24 48'}
+        height={isH ? 24 : 32}
+        viewBox={isH ? '0 0 48 24' : '0 0 24 32'}
         fill="none"
         className="overflow-visible"
       >
@@ -154,7 +154,7 @@ function ArrowConnector({ orientation }: { orientation: 'horizontal' | 'vertical
               x1="12"
               y1="0"
               x2="12"
-              y2="36"
+              y2="24"
               stroke="#2F6BFF"
               strokeWidth="2"
               strokeDasharray="6 4"
@@ -163,7 +163,7 @@ function ArrowConnector({ orientation }: { orientation: 'horizontal' | 'vertical
               transition={{ duration: 0.8, delay: 0.4 }}
             />
             <motion.polygon
-              points="6,36 12,48 18,36"
+              points="6,24 12,32 18,24"
               fill="#2F6BFF"
               initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
@@ -413,7 +413,7 @@ export function HowItWorksPage() {
                 {/* Arrow connector (vertical) between steps */}
                 {idx < flowSteps.length - 1 && (
                   <motion.div
-                    className="flex justify-center py-2"
+                    className="flex justify-center py-1.5"
                     variants={fadeIn}
                     initial="hidden"
                     animate={flowInView ? 'visible' : 'hidden'}

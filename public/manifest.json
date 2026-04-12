@@ -1,0 +1,22 @@
+{
+  "name": "NexFlowX — Financial Infrastructure",
+  "short_name": "NexFlowX",
+  "description": "API-driven financial infrastructure for cross-border commerce",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0F1A",
+  "theme_color": "#2F6BFF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/nexflowx-logo-nav.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/nexflowx-logo-nav.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -23,7 +23,7 @@ const companyFields = [
   { label: 'Country', value: 'United Kingdom', type: 'select' },
   { label: 'Business Type', value: 'Technology Company', type: 'select' },
   { label: 'Registered Address', value: '124-128 City Road, EC1V 2NX, London', type: 'text' },
-  { label: 'Contact Email', value: 'demo@nexflowx.com', type: 'text' },
+  { label: 'Contact Email', value: 'demo@nexflowx.tech', type: 'text' },
   { label: 'Contact Phone', value: '', type: 'text', placeholder: '+44 XXX XXXX XXXX' },
 ];
 

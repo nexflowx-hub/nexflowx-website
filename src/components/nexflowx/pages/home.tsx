@@ -272,7 +272,7 @@ function FlowDiagram() {
                     </div>
                   </div>
                   {!isLast && (
-                    <div className="flex items-center justify-center py-2 md:py-0 md:px-3 text-[var(--border)]">
+                    <div className="flex items-center justify-center py-3 md:py-0 md:px-4 text-[var(--border)]">
                       <ChevronRight className="w-4 h-4 rotate-90 md:rotate-0" />
                     </div>
                   )}
@@ -285,7 +285,7 @@ function FlowDiagram() {
         <FadeSection className="text-center mt-10" delay={0.3}>
           <button
             onClick={() => navigate('how-it-works')}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F6BFF] hover:text-[#00C2FF] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F6BFF] hover:text-[#00C2FF] transition-colors min-h-[44px] px-2"
           >
             Learn More <ArrowRight className="w-4 h-4" />
           </button>
@@ -323,7 +323,7 @@ function ComplianceCallout() {
                 </p>
                 <button
                   onClick={() => navigate('compliance-regulatory')}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F6BFF] hover:text-[#00C2FF] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F6BFF] hover:text-[#00C2FF] transition-colors min-h-[44px]"
                 >
                   View Compliance Framework <ArrowRight className="w-4 h-4" />
                 </button>
@@ -375,7 +375,7 @@ function SolutionsPreview() {
         <FadeSection className="text-center" delay={0.24}>
           <button
             onClick={() => navigate('solutions')}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F6BFF] hover:text-[#00C2FF] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F6BFF] hover:text-[#00C2FF] transition-colors min-h-[44px]"
           >
             Explore Solutions <ArrowRight className="w-4 h-4" />
           </button>
@@ -411,7 +411,7 @@ function FinalCTA() {
               </button>
               <button
                 onClick={() => navigate('solutions')}
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F6BFF] hover:text-[#00C2FF] transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2F6BFF] hover:text-[#00C2FF] transition-colors min-h-[44px]"
               >
                 Contact Partnerships <ArrowRight className="w-4 h-4" />
               </button>

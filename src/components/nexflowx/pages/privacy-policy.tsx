@@ -258,7 +258,7 @@ export function PrivacyPolicyPage() {
                 forms part of the contractual relationship between NexFlowX and its clients.
                 Please contact{' '}
                 <span className="font-medium" style={{ color: '#2F6BFF' }}>
-                  support@nexflowx.com
+                  support@nexflowx.tech
                 </span>{' '}
                 to request a copy of our standard DPA.
               </p>
@@ -758,7 +758,7 @@ export function PrivacyPolicyPage() {
               >
                 To exercise any of these rights, please contact us at{' '}
                 <span className="font-medium" style={{ color: '#2F6BFF' }}>
-                  support@nexflowx.com
+                  support@nexflowx.tech
                 </span>
                 . We will respond to all legitimate requests within thirty (30) days. In
                 some cases, we may need to verify your identity before processing your
@@ -950,7 +950,7 @@ export function PrivacyPolicyPage() {
                     className="text-sm font-semibold"
                     style={{ color: '#2F6BFF' }}
                   >
-                    support@nexflowx.com
+                    support@nexflowx.tech
                   </span>
                 </div>
               </div>

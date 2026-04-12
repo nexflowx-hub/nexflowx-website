@@ -93,12 +93,66 @@ function PageContent() {
   );
 }
 
+const organizationLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'NexFlowX',
+  legalName: 'IAHUB360 LTD',
+  url: 'https://nexflowx.tech',
+  logo: 'https://nexflowx.tech/nexflowx-logo-nav.png',
+  description: 'API-driven financial infrastructure for cross-border commerce. Technology Service Provider (TSP).',
+  foundingDate: '2025',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'support@nexflowx.tech',
+    contactType: 'customer support',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '124-128 City Road',
+    addressLocality: 'London',
+    postalCode: 'EC1V 2NX',
+    addressCountry: 'GB',
+  },
+  sameAs: [],
+};
+
+const softwareApplicationLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'NexFlowX Platform',
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'Web',
+  description: 'Cross-border payment orchestration and financial infrastructure API',
+  url: 'https://nexflowx.tech',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'EUR',
+    description: 'Institutional access requires KYC/KYB verification',
+  },
+  creator: {
+    '@type': 'Organization',
+    name: 'IAHUB360 LTD',
+  },
+};
+
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <PageContent />
-      <Footer />
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationLd) }}
+      />
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <PageContent />
+        <Footer />
+      </div>
+    </>
   );
 }

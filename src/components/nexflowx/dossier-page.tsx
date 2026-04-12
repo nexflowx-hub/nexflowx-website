@@ -127,7 +127,7 @@ export function DossierContent({ onClose }: { onClose: () => void }) {
               {/* Code */}
               <pre className="px-5 py-4 text-[12px] leading-relaxed overflow-x-auto" style={{ fontFamily: 'var(--nx-font-mono)' }}>
                 <code>
-                  <span className="text-[#C5C6C7]">{'curl -X POST https://api.nexflowx.com'}</span>
+                  <span className="text-[#C5C6C7]">{'curl -X POST https://api.nexflowx.tech'}</span>
                   {'\n'}
                   <span className="text-[#00FF66]">{'/v1/orchestration/route'}</span>
                   {'\n'}
@@ -272,7 +272,7 @@ export function DossierContent({ onClose }: { onClose: () => void }) {
                 {d.s7SandboxLabel}
               </p>
               <p className="text-sm font-bold text-[#00FF66]" style={{ fontFamily: 'var(--nx-font-mono)' }}>
-                dev.nexflowx.com
+                dev.nexflowx.tech
               </p>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Sora, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
@@ -25,9 +25,10 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://nexflowx.tech'),
   title: "NexFlowX — Financial Infrastructure for Cross-Border Commerce",
   description:
-    "API-first orchestration layer connecting global sellers to local payment systems. Technology Service Provider for cross-border payment infrastructure.",
+    "NexFlowX provides API-driven financial infrastructure for cross-border commerce. Technology Service Provider (TSP) connecting global businesses to local payment systems through licensed partners. Non-custodial, ISO 20022 ready.",
   keywords: [
     "NexFlowX",
     "Financial Infrastructure",
@@ -37,23 +38,64 @@ export const metadata: Metadata = {
     "Technology Service Provider",
     "Multi-Region Settlement",
     "PSP Integration",
+    "TSP",
+    "Non-custodial",
+    "ISO 20022",
+    "Payment API",
+    "Cross-border payments",
+    "IAHUB360",
   ],
   authors: [{ name: "IAHUB360 LTD" }],
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: "/nexflowx-logo-nav.png",
   },
+  manifest: '/manifest.json',
   openGraph: {
     title: "NexFlowX — Financial Infrastructure for Cross-Border Commerce",
     description:
-      "API-first orchestration layer connecting global sellers to local payment systems.",
-    siteName: "NexFlowX",
-    type: "website",
+      "API-driven financial infrastructure for cross-border commerce. Technology Service Provider (TSP) connecting global businesses to local payment systems through licensed partners.",
+    url: 'https://nexflowx.tech',
+    siteName: 'NexFlowX',
+    locale: 'en_GB',
+    type: 'website',
   },
   twitter: {
     card: "summary_large_image",
+    site: '@nexflowx',
     title: "NexFlowX — Financial Infrastructure",
-    description: "API-first orchestration layer for cross-border commerce.",
+    description: "API-driven financial infrastructure for cross-border commerce. Technology Service Provider (TSP).",
   },
+  verification: {
+    google: 'your-google-verification-code',
+    bing: 'your-bing-verification-code',
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'black-translucent',
+    'format-detection': 'telephone=no',
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: '#2F6BFF',
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({

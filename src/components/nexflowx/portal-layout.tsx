@@ -35,7 +35,7 @@ export function PortalLayout({ children }: { children: React.ReactNode }) {
       {/* Mobile hamburger */}
       <button
         onClick={() => setPortalSidebarOpen(!portalSidebarOpen)}
-        className="fixed top-20 left-4 z-50 lg:hidden p-2 rounded-lg bg-[var(--card)] border border-[var(--border)] shadow-md text-muted-foreground hover:text-foreground transition-colors"
+        className="fixed top-20 left-4 z-50 lg:hidden flex items-center justify-center w-11 h-11 min-h-[44px] min-w-[44px] rounded-lg bg-[var(--card)] border border-[var(--border)] shadow-md text-muted-foreground hover:text-foreground transition-colors"
         aria-label="Toggle sidebar"
       >
         {portalSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -117,7 +117,7 @@ export function PortalLayout({ children }: { children: React.ReactNode }) {
                 Demo Company
               </p>
               <p className="text-xs text-muted-foreground/70 truncate">
-                demo@nexflowx.com
+                demo@nexflowx.tech
               </p>
             </div>
           </div>
@@ -125,7 +125,7 @@ export function PortalLayout({ children }: { children: React.ReactNode }) {
       </aside>
 
       {/* Main content area */}
-      <main className="lg:ml-64 min-h-[calc(100vh-4rem)]">
+      <main className="lg:ml-64 min-h-[calc(100vh-4rem)] nx-safe-bottom">
         <div className="p-6 lg:p-8 max-w-6xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div

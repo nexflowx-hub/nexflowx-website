@@ -88,7 +88,7 @@ export function Footer() {
                 <li key={item.page}>
                   <button
                     onClick={() => handleNav(item.page)}
-                    className="flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] hover:text-[#2F6BFF] transition-colors group"
+                    className="flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] hover:text-[#2F6BFF] transition-colors group min-h-[44px]"
                   >
                     <ChevronRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                     {item.label}
@@ -112,7 +112,7 @@ export function Footer() {
                 <li key={item.page}>
                   <button
                     onClick={() => handleNav(item.page)}
-                    className="flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] hover:text-[#2F6BFF] transition-colors group"
+                    className="flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] hover:text-[#2F6BFF] transition-colors group min-h-[44px]"
                   >
                     <ChevronRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                     {item.label}
@@ -136,7 +136,7 @@ export function Footer() {
                 <li key={item.page}>
                   <button
                     onClick={() => handleNav(item.page)}
-                    className="flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] hover:text-[#2F6BFF] transition-colors group"
+                    className="flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] hover:text-[#2F6BFF] transition-colors group min-h-[44px]"
                   >
                     <ChevronRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
                     {item.label}
@@ -148,7 +148,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="nx-safe-bottom mt-12 pt-8 border-t border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-xs text-[var(--muted-foreground)] opacity-70">
             <span>© 2026 NexFlowX. All rights reserved.</span>
             <span className="hidden sm:inline">·</span>

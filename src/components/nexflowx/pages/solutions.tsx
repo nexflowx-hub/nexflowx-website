@@ -620,76 +620,80 @@ export function SolutionsPage() {
 
               {/* Table */}
               <FadeChild index={1}>
-                <div className="nx-card overflow-hidden">
-                  {/* Table header */}
-                  <div
-                    className="grid grid-cols-3 text-left"
-                    style={{
-                      background: 'var(--muted)',
-                      borderBottom: '1px solid var(--border)',
-                    }}
-                  >
-                    <div className="px-4 sm:px-6 py-3.5">
-                      <span
-                        className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70"
-                        style={{ fontFamily: 'var(--font-space-mono)' }}
+                <div className="nx-card overflow-hidden -mx-6 sm:mx-0">
+                  <div className="overflow-x-auto" style={{ WebkitOverflowScrolling: 'touch' }}>
+                    <div className="min-w-[520px]">
+                      {/* Table header */}
+                      <div
+                        className="grid grid-cols-3 text-left"
+                        style={{
+                          background: 'var(--muted)',
+                          borderBottom: '1px solid var(--border)',
+                        }}
                       >
-                        Feature
-                      </span>
-                    </div>
-                    <div className="px-4 sm:px-6 py-3.5">
-                      <span
-                        className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70"
-                        style={{ fontFamily: 'var(--font-space-mono)' }}
-                      >
-                        Traditional Approach
-                      </span>
-                    </div>
-                    <div className="px-4 sm:px-6 py-3.5">
-                      <span
-                        className="text-xs font-semibold uppercase tracking-wider text-[#2F6BFF]"
-                        style={{ fontFamily: 'var(--font-space-mono)' }}
-                      >
-                        NexFlowX
-                      </span>
+                        <div className="px-4 sm:px-6 py-3.5">
+                          <span
+                            className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70"
+                            style={{ fontFamily: 'var(--font-space-mono)' }}
+                          >
+                            Feature
+                          </span>
+                        </div>
+                        <div className="px-4 sm:px-6 py-3.5">
+                          <span
+                            className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/70"
+                            style={{ fontFamily: 'var(--font-space-mono)' }}
+                          >
+                            Traditional Approach
+                          </span>
+                        </div>
+                        <div className="px-4 sm:px-6 py-3.5">
+                          <span
+                            className="text-xs font-semibold uppercase tracking-wider text-[#2F6BFF]"
+                            style={{ fontFamily: 'var(--font-space-mono)' }}
+                          >
+                            NexFlowX
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Table rows */}
+                      {comparisonRows.map((row, i) => (
+                        <div
+                          key={row.feature}
+                          className="grid grid-cols-3 text-left"
+                          style={{
+                            borderBottom:
+                              i < comparisonRows.length - 1
+                                ? '1px solid var(--border)'
+                                : 'none',
+                          }}
+                        >
+                          <div className="px-4 sm:px-6 py-4">
+                            <span className="text-sm font-medium text-foreground">
+                              {row.feature}
+                            </span>
+                          </div>
+                          <div className="px-4 sm:px-6 py-4">
+                            <div className="flex items-center gap-2">
+                              <XCircle className="w-4 h-4 shrink-0 text-[#EF4444]" />
+                              <span className="text-sm text-muted-foreground">
+                                {row.traditional}
+                              </span>
+                            </div>
+                          </div>
+                          <div className="px-4 sm:px-6 py-4">
+                            <div className="flex items-center gap-2">
+                              <CheckCircle2 className="w-4 h-4 shrink-0 text-[#22C55E]" />
+                              <span className="text-sm font-medium text-foreground">
+                                {row.nexflowx}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
-
-                  {/* Table rows */}
-                  {comparisonRows.map((row, i) => (
-                    <div
-                      key={row.feature}
-                      className="grid grid-cols-3 text-left"
-                      style={{
-                        borderBottom:
-                          i < comparisonRows.length - 1
-                            ? '1px solid var(--border)'
-                            : 'none',
-                      }}
-                    >
-                      <div className="px-4 sm:px-6 py-4">
-                        <span className="text-sm font-medium text-foreground">
-                          {row.feature}
-                        </span>
-                      </div>
-                      <div className="px-4 sm:px-6 py-4">
-                        <div className="flex items-center gap-2">
-                          <XCircle className="w-4 h-4 shrink-0 text-[#EF4444]" />
-                          <span className="text-sm text-muted-foreground">
-                            {row.traditional}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="px-4 sm:px-6 py-4">
-                        <div className="flex items-center gap-2">
-                          <CheckCircle2 className="w-4 h-4 shrink-0 text-[#22C55E]" />
-                          <span className="text-sm font-medium text-foreground">
-                            {row.nexflowx}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
                 </div>
               </FadeChild>
             </SectionInView>

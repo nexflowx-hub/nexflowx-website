@@ -487,7 +487,7 @@ export function ApiTechnologyPage() {
                     }}
                   >
                     <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" />
-                    https://api.nexflowx.com/v1/sandbox
+                    https://api.nexflowx.tech/v1/sandbox
                   </div>
 
                   <ul className="space-y-2.5">
@@ -534,7 +534,7 @@ export function ApiTechnologyPage() {
                     }}
                   >
                     <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" />
-                    https://api.nexflowx.com/v1
+                    https://api.nexflowx.tech/v1
                   </div>
 
                   <ul className="space-y-2.5">

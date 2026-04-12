@@ -590,7 +590,7 @@ export function ComplianceStatementPage() {
                       className="text-sm font-semibold"
                       style={{ color: '#2F6BFF' }}
                     >
-                      compliance@nexflowx.com
+                      compliance@nexflowx.tech
                     </span>
                   </div>
                 </div>
@@ -618,7 +618,7 @@ export function ComplianceStatementPage() {
                       className="text-sm font-semibold"
                       style={{ color: 'var(--foreground)' }}
                     >
-                      support@nexflowx.com
+                      support@nexflowx.tech
                     </span>
                   </div>
                 </div>

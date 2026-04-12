@@ -796,7 +796,7 @@ export function TermsOfServicePage() {
                     className="text-sm font-semibold"
                     style={{ color: '#2F6BFF' }}
                   >
-                    support@nexflowx.com
+                    support@nexflowx.tech
                   </span>
                 </div>
               </div>
