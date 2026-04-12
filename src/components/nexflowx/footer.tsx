@@ -1,89 +1,162 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Mail, Globe } from 'lucide-react';
-import { useLanguage } from '@/lib/language-context';
-
-const platformLinks = ['FLOX Orchestrator', 'Smart Routing', 'Multi-Acquirer', 'API Reference'];
-const coverageLinks = ['Europe', 'Latin America', 'United States', 'Asia-Pacific'];
+import { useAppStore, type PageRoute } from '@/lib/store';
+import { Shield, FileCheck, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { navigate } = useAppStore();
+
+  const handleNav = (page: PageRoute) => {
+    navigate(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <footer className="relative border-t border-[#333F4D] bg-[#0B0C10]">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00FF66]/30 to-transparent" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            <motion.div className="flex items-center gap-2.5 mb-4 cursor-pointer" whileHover={{ scale: 1.05 }} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              <img src="/nexflowx-logo-footer.png" alt="NeXFlowX" className="h-8 w-8 object-contain" style={{ filter: 'drop-shadow(0 0 6px rgba(0,255,102,0.3))' }} />
-              <span className="text-xl font-bold text-white" style={{ fontFamily: 'var(--nx-font-heading)' }}>
-                NeXFlow<span className="text-[#00FF66]">X</span>
-              </span>
-            </motion.div>
-            <p className="text-sm text-[#C5C6C7] max-w-xs mb-4" style={{ fontFamily: 'var(--nx-font-body)' }}>
-              {t.footer.tagline}
+    <footer className="border-t border-[var(--border)] bg-[var(--card)]">
+      {/* Compliance banner */}
+      <div className="border-b border-[var(--border)]">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex items-start gap-3">
+            <Shield className="w-4 h-4 text-[#2F6BFF] mt-0.5 shrink-0" />
+            <p className="text-xs leading-relaxed text-[var(--muted-foreground)]">
+              <strong className="text-[var(--foreground)]">NexFlowX</strong> operates strictly as a{' '}
+              <strong>Technology Service Provider</strong> and does not engage in regulated financial activities.
+              The platform does not hold client funds, execute transactions, or provide payment services.
+              All financial operations are performed by licensed third-party institutions.
             </p>
-            <div className="flex items-center gap-1">
-              <span className="w-2 h-2 rounded-full bg-[#00FF66] animate-pulse" />
-              <span className="text-xs text-[#C5C6C7]" style={{ fontFamily: 'var(--nx-font-mono)' }}>{t.footer.systems}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Trust Badges Strip */}
+      <div className="border-b border-[var(--border)]">
+        <div className="max-w-6xl mx-auto px-6 py-4">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
+            <span className="nx-badge nx-badge-info text-xs font-medium gap-2">
+              <Shield className="w-3.5 h-3.5" />
+              Non-Custodial Architecture
+            </span>
+            <span className="nx-badge nx-badge-info text-xs font-medium gap-2">
+              <FileCheck className="w-3.5 h-3.5" />
+              ISO 20022 Ready
+            </span>
+            <span className="nx-badge nx-badge-success text-xs font-medium gap-2">
+              <span className="nx-dot nx-dot-success" />
+              UK GDPR Compliant
+            </span>
+            <span className="nx-badge nx-badge-success text-xs font-medium gap-2">
+              <span className="nx-dot nx-dot-success" />
+              EU GDPR Compliant
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main footer */}
+      <div className="max-w-6xl mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-2.5 mb-4">
+              <Image src="/nexflowx-logo-nav.png" alt="NexFlowX" width={24} height={24} className="w-6 h-6" />
+              <span className="text-sm font-semibold tracking-tight font-[family-name:var(--font-sora)]">
+                NexFlowX
+              </span>
             </div>
+            <p className="text-sm text-[var(--muted-foreground)] leading-relaxed mb-4">
+              Financial infrastructure for cross-border commerce.
+              API-driven technology connecting global businesses to local payment systems.
+            </p>
+            <p className="text-xs text-[var(--muted-foreground)] opacity-70">
+              A product by <span className="text-[var(--foreground)] font-medium">IAHUB360 LTD</span>
+            </p>
           </div>
 
           {/* Platform */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4" style={{ fontFamily: 'var(--nx-font-heading)' }}>{t.footer.platform}</h4>
-            <ul className="space-y-2">
-              {platformLinks.map((item) => (
-                <li key={item}><span className="text-sm text-[#C5C6C7] hover:text-[#00FF66] transition-colors cursor-pointer">{item}</span></li>
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)] mb-4">
+              Platform
+            </h4>
+            <ul className="space-y-2.5">
+              {([
+                { label: 'How It Works', page: 'how-it-works' as PageRoute },
+                { label: 'Solutions', page: 'solutions' as PageRoute },
+                { label: 'API & Technology', page: 'api-technology' as PageRoute },
+                { label: 'Partner Portal', page: 'portal-dashboard' as PageRoute },
+              ] as const).map((item) => (
+                <li key={item.page}>
+                  <button
+                    onClick={() => handleNav(item.page)}
+                    className="flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] hover:text-[#2F6BFF] transition-colors group"
+                  >
+                    <ChevronRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    {item.label}
+                  </button>
+                </li>
               ))}
             </ul>
           </div>
 
-          {/* Coverage */}
+          {/* Compliance */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4" style={{ fontFamily: 'var(--nx-font-heading)' }}>{t.footer.coverage}</h4>
-            <ul className="space-y-2">
-              {coverageLinks.map((item) => (
-                <li key={item}><span className="text-sm text-[#C5C6C7] hover:text-[#00FF66] transition-colors cursor-pointer">{item}</span></li>
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)] mb-4">
+              Compliance & Legal
+            </h4>
+            <ul className="space-y-2.5">
+              {([
+                { label: 'Regulatory Positioning', page: 'compliance-regulatory' as PageRoute },
+                { label: 'AML & KYC Framework', page: 'compliance-aml-kyc' as PageRoute },
+                { label: 'Data Protection (GDPR)', page: 'compliance-data-protection' as PageRoute },
+              ] as const).map((item) => (
+                <li key={item.page}>
+                  <button
+                    onClick={() => handleNav(item.page)}
+                    className="flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] hover:text-[#2F6BFF] transition-colors group"
+                  >
+                    <ChevronRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    {item.label}
+                  </button>
+                </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Legal */}
           <div>
-            <h4 className="text-sm font-semibold text-white mb-4" style={{ fontFamily: 'var(--nx-font-heading)' }}>{t.footer.contact}</h4>
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 text-sm text-[#C5C6C7]">
-                <Mail className="w-4 h-4 text-[#00FF66]" /><span>{t.footer.email}</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-[#C5C6C7]">
-                <Globe className="w-4 h-4 text-[#00FF66]" /><span>{t.footer.website}</span>
-              </div>
-            </div>
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-[var(--muted-foreground)] mb-4">
+              Legal
+            </h4>
+            <ul className="space-y-2.5">
+              {([
+                { label: 'Terms of Service', page: 'terms-of-service' as PageRoute },
+                { label: 'Privacy Policy', page: 'privacy-policy' as PageRoute },
+                { label: 'Compliance Statement', page: 'compliance-statement' as PageRoute },
+              ] as const).map((item) => (
+                <li key={item.page}>
+                  <button
+                    onClick={() => handleNav(item.page)}
+                    className="flex items-center gap-1.5 text-sm text-[var(--muted-foreground)] hover:text-[#2F6BFF] transition-colors group"
+                  >
+                    <ChevronRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        {/* Compliance Bar */}
-        <div className="mt-12 pt-6 border-t border-[#333F4D] space-y-3">
-          <p className="text-xs text-[#C5C6C7]/70 text-center" style={{ fontFamily: 'var(--nx-font-mono)' }}>
-            {t.footer.copyright}
-          </p>
-          <p className="text-xs text-[#C5C6C7]/50 text-center" style={{ fontFamily: 'var(--nx-font-mono)' }}>
-            {t.footer.registered}
-          </p>
-          <p className="text-xs text-[#C5C6C7]/50 text-center" style={{ fontFamily: 'var(--nx-font-mono)' }}>
-            {t.footer.address}
-          </p>
-          <div className="flex items-center justify-center gap-6 pt-3">
-            <span className="text-xs text-[#C5C6C7] hover:text-[#00FF66] transition-colors cursor-pointer">{t.footer.privacy}</span>
-            <span className="text-[#333F4D]">|</span>
-            <span className="text-xs text-[#C5C6C7] hover:text-[#00FF66] transition-colors cursor-pointer">{t.footer.terms}</span>
-            <span className="text-[#333F4D]">|</span>
-            <span className="text-xs text-[#C5C6C7] hover:text-[#00FF66] transition-colors cursor-pointer">{t.footer.sla}</span>
+        {/* Bottom bar */}
+        <div className="mt-12 pt-8 border-t border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-xs text-[var(--muted-foreground)] opacity-70">
+            <span>© 2026 NexFlowX. All rights reserved.</span>
+            <span className="hidden sm:inline">·</span>
+            <span>A product by IAHUB360 LTD</span>
+          </div>
+          <div className="text-xs text-[var(--muted-foreground)] opacity-70 text-center sm:text-right">
+            <p>Registered in England and Wales: 16626733</p>
+            <p>124–128 City Road, EC1V 2NX, London, United Kingdom</p>
           </div>
         </div>
       </div>

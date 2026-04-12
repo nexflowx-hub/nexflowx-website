@@ -60,7 +60,7 @@ export function DossierContent({ onClose }: { onClose: () => void }) {
               <Server className="w-4 h-4 text-[#00FF66]" />
               {d.s1CoreTitle}
             </h3>
-            <p className="text-[#C5C6C6C] mb-4" style={{ fontFamily: 'var(--nx-font-body)', fontSize: '14px' }}>
+            <p className="text-[#C5C6C7] mb-4" style={{ fontFamily: 'var(--nx-font-body)', fontSize: '14px' }}>
               {d.s1CoreContent}
             </p>
             <ul className="space-y-3">
@@ -92,7 +92,7 @@ export function DossierContent({ onClose }: { onClose: () => void }) {
               {(d.s2Items as unknown[]).map((item: unknown, i: number) => (
                 <li key={i} className="flex items-start gap-3 text-sm">
                   <span className="w-2 h-2 rounded-full bg-[#00FF66] mt-1.5 flex-shrink-0" style={{ boxShadow: '0 0 4px rgba(0,255,102,0.4)' }} />
-                  <span className="text-[#C5C6C6C] leading-relaxed">{item as string}</span>
+                  <span className="text-[#C5C6C7] leading-relaxed">{item as string}</span>
                 </li>
               ))}
             </ul>
@@ -127,18 +127,18 @@ export function DossierContent({ onClose }: { onClose: () => void }) {
               {/* Code */}
               <pre className="px-5 py-4 text-[12px] leading-relaxed overflow-x-auto" style={{ fontFamily: 'var(--nx-font-mono)' }}>
                 <code>
-                  <span className="text-[#C5C6C7]">{'curl -X POST https://api.nexflowx.tech'}</span>
+                  <span className="text-[#C5C6C7]">{'curl -X POST https://api.nexflowx.com'}</span>
                   {'\n'}
                   <span className="text-[#00FF66]">{'/v1/orchestration/route'}</span>
                   {'\n'}
-                  <span className="text-[#C5C6C6C7]">{'  -H "Authorization: Bearer nfx_live_node_2026"'}</span>
+                  <span className="text-[#C5C6C7]">{'  -H "Authorization: Bearer nfx_live_node_2026"'}</span>
                   {'\n'}
                   <span className="text-[#5C6370]">{'  -H "Content-Type: application/json"'}</span>
                   {'\n'}
-                  <span className="text-[#C5C6C6C]">{"  -d '"}{'\n'}
+                  <span className="text-[#C5C6C7]">{"  -d '"}</span>{'\n'}
                   <span className="text-[#ABB2BF]">{"    \"amount\": 150000,"}</span><span className="text-[#ABB2BF]">{','}</span>
                   <span className="text-[#ABB2BF]">{"    \"currency\": \"GBP\""}</span><span className="text-[#ABB2BF]">{','}</span>
-                  <span className="text-[#C5C6C6C7]">{"}"}</span>
+                  <span className="text-[#C5C6C7]">{"}"}</span>
                 </code>
               </pre>
             </div>
@@ -160,7 +160,7 @@ export function DossierContent({ onClose }: { onClose: () => void }) {
                     {(d.s3Endpoints as unknown[]).map((ep: unknown, i: number) => (
                       <tr key={i} className="border-b border-[#333F4D]/30 last:border-b-0">
                         <td className="px-4 py-3 text-[12px] text-[#00FF66] font-semibold" style={{ fontFamily: 'var(--nx-font-mono)' }}>{(ep as {endpoint: string}).endpoint}</td>
-                        <td className="px-4 py-3 text-[12px] text-[#C5C6C6C6]" style={{ fontFamily: 'var(--nx-font-mono)' }}>{(ep as {desc: string}).desc}</td>
+                        <td className="px-4 py-3 text-[12px] text-[#C5C6C7]" style={{ fontFamily: 'var(--nx-font-mono)' }}>{(ep as {desc: string}).desc}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -187,7 +187,7 @@ export function DossierContent({ onClose }: { onClose: () => void }) {
                   <Shield className="w-4 h-4 text-[#00FF66]" />
                   {title}
                 </h3>
-                <p className="text-[#C5C6C6C] leading-relaxed text-sm" style={{ fontFamily: 'var(--nx-font-body)' }}>
+                <p className="text-[#C5C6C7] leading-relaxed text-sm" style={{ fontFamily: 'var(--nx-font-body)' }}>
                   {(d as Record<string, unknown>)[`s4Content${i + 1}`] as string}
                 </p>
               </div>
@@ -206,7 +206,8 @@ export function DossierContent({ onClose }: { onClose: () => void }) {
             {d.s5Title}
           </h2>
           <div className="space-y-4">
-            {roadmapItems.map((item) => (
+            {roadmapItems.map((item) => {
+              return (
               <motion.div key={item.phase} initial={{ opacity: 0, x: -20 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.1 }}>
                 <div className="flex items-center gap-4 p-4 rounded-xl border border-[#333F4D] bg-[#151A22]/50">
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold ${statusStyles[item.status]}`} style={{ fontFamily: 'var(--nx-font-mono)' }}>
@@ -221,13 +222,14 @@ export function DossierContent({ onClose }: { onClose: () => void }) {
                         {item.statusLabel}
                       </span>
                     </div>
-                    <p className="text-sm text-[#C5C6C6C7]" style={{ fontFamily: 'var(--nx-font-body)' }}>
+                    <p className="text-sm text-[#C5C6C7]" style={{ fontFamily: 'var(--nx-font-body)' }}>
                       {item.desc}
                     </p>
                   </div>
                 </div>
               </motion.div>
-            )}
+              );
+            })}
           </div>
         </motion.section>
 
@@ -262,15 +264,15 @@ export function DossierContent({ onClose }: { onClose: () => void }) {
               <AlertTriangle className="w-5 h-5" />
               {d.s7Title}
             </h3>
-            <p className="text-sm text-[#C5C6C6C] leading-relaxed mb-4" style={{ fontFamily: 'var(--nx-font-body)' }}>
+            <p className="text-sm text-[#C5C6C7] leading-relaxed mb-4" style={{ fontFamily: 'var(--nx-font-body)' }}>
               {d.s7Content}
             </p>
             <div className="p-4 rounded-lg bg-[#0B0C10] border border-dashed border-[#FF9F0A]/30 text-center">
-              <p className="text-xs text-[#C5C6C6C] mb-2" style={{ fontFamily: 'var(--nx-font-mono)' }}>
+              <p className="text-xs text-[#C5C6C7] mb-2" style={{ fontFamily: 'var(--nx-font-mono)' }}>
                 {d.s7SandboxLabel}
               </p>
               <p className="text-sm font-bold text-[#00FF66]" style={{ fontFamily: 'var(--nx-font-mono)' }}>
-                dev.nexflowx.tech
+                dev.nexflowx.com
               </p>
             </div>
           </div>
@@ -280,7 +282,7 @@ export function DossierContent({ onClose }: { onClose: () => void }) {
         <div className="pt-8 text-center">
           <button
             onClick={onClose}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#333F4D] text-sm text-[#C5C6C6C] hover:border-[#00FF66]/50 hover:text-[#00FF66] hover:shadow-[0_0_20px_rgba(0,255,102,0.1)] transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#333F4D] text-sm text-[#C5C6C7] hover:border-[#00FF66]/50 hover:text-[#00FF66] hover:shadow-[0_0_20px_rgba(0,255,102,0.1)] transition-all"
             style={{ fontFamily: 'var(--nx-font-mono)' }}
           >
             <ArrowLeft className="w-4 h-4" />

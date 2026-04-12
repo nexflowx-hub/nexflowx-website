@@ -1,37 +1,104 @@
 'use client';
 
-import { Navigation } from '@/components/nexflowx/navigation';
-import { HeroEnterprise } from '@/components/nexflowx/hero-enterprise';
-import { CoreEngine } from '@/components/nexflowx/core-engine';
-import { DeveloperHub } from '@/components/nexflowx/developer-hub';
-import { TowerSection } from '@/components/nexflowx/tower-section';
-import { CoverageSection } from '@/components/nexflowx/coverage-section';
-import { NodesSection } from '@/components/nexflowx/nodes-section';
-import { EnterpriseSolutions } from '@/components/nexflowx/enterprise-solutions';
-import { InsightsSection } from '@/components/nexflowx/insights-section';
-import { PartnersTrust } from '@/components/nexflowx/partners-trust';
-import { CTASection } from '@/components/nexflowx/cta-section';
+import { useAppStore } from '@/lib/store';
+import { Navbar } from '@/components/nexflowx/navbar';
 import { Footer } from '@/components/nexflowx/footer';
-import Webchat from '@/components/nexflowx/webchat';
+import { PortalLayout } from '@/components/nexflowx/portal-layout';
+
+import { HomePage } from '@/components/nexflowx/pages/home';
+import { HowItWorksPage } from '@/components/nexflowx/pages/how-it-works';
+import { SolutionsPage } from '@/components/nexflowx/pages/solutions';
+import { ApiTechnologyPage } from '@/components/nexflowx/pages/api-technology';
+import { ComplianceRegulatoryPage } from '@/components/nexflowx/pages/compliance-regulatory';
+import { ComplianceAmlKycPage } from '@/components/nexflowx/pages/compliance-aml-kyc';
+import { ComplianceProgramPage } from '@/components/nexflowx/pages/compliance-program';
+import { ComplianceRiskPage } from '@/components/nexflowx/pages/compliance-risk';
+import { ComplianceDataProtectionPage } from '@/components/nexflowx/pages/compliance-data-protection';
+import { TermsOfServicePage } from '@/components/nexflowx/pages/terms-of-service';
+import { PrivacyPolicyPage } from '@/components/nexflowx/pages/privacy-policy';
+import { ComplianceStatementPage } from '@/components/nexflowx/pages/compliance-statement';
+
+import { PortalDashboard } from '@/components/nexflowx/portal/dashboard';
+import { PortalOnboarding } from '@/components/nexflowx/portal/onboarding';
+import { PortalDocuments } from '@/components/nexflowx/portal/documents';
+import { PortalApiAccess } from '@/components/nexflowx/portal/api-access';
+
+import { AnimatePresence, motion } from 'framer-motion';
+
+function PageContent() {
+  const { currentPage } = useAppStore();
+
+  const isPortal = currentPage.startsWith('portal');
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return <HomePage />;
+      case 'how-it-works':
+        return <HowItWorksPage />;
+      case 'solutions':
+        return <SolutionsPage />;
+      case 'api-technology':
+        return <ApiTechnologyPage />;
+      case 'compliance':
+        return <ComplianceRegulatoryPage />;
+      case 'compliance-regulatory':
+        return <ComplianceRegulatoryPage />;
+      case 'compliance-aml-kyc':
+        return <ComplianceAmlKycPage />;
+      case 'compliance-program':
+        return <ComplianceProgramPage />;
+      case 'compliance-risk':
+        return <ComplianceRiskPage />;
+      case 'compliance-data-protection':
+        return <ComplianceDataProtectionPage />;
+      case 'terms-of-service':
+        return <TermsOfServicePage />;
+      case 'privacy-policy':
+        return <PrivacyPolicyPage />;
+      case 'compliance-statement':
+        return <ComplianceStatementPage />;
+      case 'portal':
+      case 'portal-dashboard':
+        return <PortalDashboard />;
+      case 'portal-onboarding':
+        return <PortalOnboarding />;
+      case 'portal-documents':
+        return <PortalDocuments />;
+      case 'portal-api-access':
+        return <PortalApiAccess />;
+      default:
+        return <HomePage />;
+    }
+  };
+
+  if (isPortal) {
+    return <PortalLayout>{renderPage()}</PortalLayout>;
+  }
+
+  return (
+    <main className="flex-grow pt-16">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentPage}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.2 }}
+        >
+          {renderPage()}
+        </motion.div>
+      </AnimatePresence>
+    </main>
+  );
+}
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
-      <main className="flex-grow">
-        <HeroEnterprise />
-        <CoreEngine />
-        <DeveloperHub />
-        <TowerSection />
-        <CoverageSection />
-        <NodesSection />
-        <EnterpriseSolutions />
-        <InsightsSection />
-        <PartnersTrust />
-        <CTASection />
-      </main>
+      <Navbar />
+      <PageContent />
       <Footer />
-      <Webchat />
     </div>
   );
 }

@@ -1,54 +1,58 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Space_Mono } from "next/font/google";
+import { Inter, Sora, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import { LanguageProvider } from "@/lib/language-context";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const sora = Sora({
+  variable: "--font-sora",
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const spaceMono = Space_Mono({
   variable: "--font-space-mono",
   subsets: ["latin"],
   weight: ["400", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "NeXFlowX — Financial Supply Chain Orchestrator",
+  title: "NexFlowX — Financial Infrastructure for Cross-Border Commerce",
   description:
-    "Transformamos pagamentos numa operação logística global inteligente. Orquestração de Supply Chain Financeira com visibilidade em tempo real.",
+    "API-first orchestration layer connecting global sellers to local payment systems. Technology Service Provider for cross-border payment infrastructure.",
   keywords: [
-    "NeXFlowX",
-    "Financial Supply Chain",
+    "NexFlowX",
+    "Financial Infrastructure",
     "Payment Orchestration",
-    "Supply Chain Finance",
-    "Multi-Acquirer",
-    "Smart Routing",
-    "FLOX",
+    "Cross-Border Commerce",
+    "API Infrastructure",
+    "Technology Service Provider",
+    "Multi-Region Settlement",
+    "PSP Integration",
   ],
-  authors: [{ name: "NeXFlowX Team" }],
+  authors: [{ name: "IAHUB360 LTD" }],
   icons: {
     icon: "/nexflowx-logo-nav.png",
   },
   openGraph: {
-    title: "NeXFlowX — Financial Supply Chain Orchestrator",
+    title: "NexFlowX — Financial Infrastructure for Cross-Border Commerce",
     description:
-      "Gerimos dinheiro como a Amazon gere encomendas. Orquestração inteligente de pagamentos globais.",
-    siteName: "NeXFlowX",
+      "API-first orchestration layer connecting global sellers to local payment systems.",
+    siteName: "NexFlowX",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "NeXFlowX — Financial Supply Chain Orchestrator",
-    description: "Gerimos dinheiro como a Amazon gere encomendas.",
+    title: "NexFlowX — Financial Infrastructure",
+    description: "API-first orchestration layer for cross-border commerce.",
   },
 };
 
@@ -58,15 +62,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt" suppressHydrationWarning className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${spaceMono.variable} antialiased`}
-        style={{ backgroundColor: "#0B0C10" }}
+        className={`${inter.variable} ${sora.variable} ${spaceMono.variable} antialiased`}
       >
-        <LanguageProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
           <Toaster />
-        </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
